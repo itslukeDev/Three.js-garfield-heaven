@@ -2,6 +2,8 @@
 ![Garbield](https://raw.githubusercontent.com/lukedev820/Three.js-basic-setup/master/Banner.png)
 ## Info 🐈
 This is just a basic and silly setup/template for [Three.js](https://threejs.org/). I mainly made this as a reference and a possible foundation for any silly projects I make with Three.js. 
+
+[Live demo:](https://lukedev820.github.io/Three.js-basic-setup/)
 ## Setup 🐈
 Once you have cloned the repo all you need to do is run `index.html` via a local server. This can be done in a variety of ways but i recommend using [Visual Studio's "Live Server" extension.](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 ## Configuration 🐈
