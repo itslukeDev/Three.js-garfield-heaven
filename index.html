@@ -97,13 +97,10 @@ camera.add( listener );
 const sound = new THREE.Audio( listener );
 
 // load a sound and set it as the Audio object's buffer
-const audioLoader = new THREE.AudioLoader();
-audioLoader.load( 'sounds/fly-me-to-the-moon.mp3', function( buffer ) {
-	sound.setBuffer( buffer );
-	sound.setLoop( true );
-	sound.setVolume( 0.5 );
-	sound.play();
-});
+const songElement = document.getElementById( 'song' );
+songElement.volume = 0.4; 
+songElement.play();
+
 
 animate();
 
