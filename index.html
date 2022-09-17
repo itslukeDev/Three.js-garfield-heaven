@@ -75,6 +75,7 @@ for(var i = 0; i<400;i++) {
         model.position.x = (Math.random() - 0.5) * 300;
         model.position.y = (Math.random() - 0.5) * 100;
         model.position.z = (Math.random() - 0.5) * 200;
+	model.rotation.y = (Math.random() * 10);
         scene.add(model);
         models.push(model);
     })  
