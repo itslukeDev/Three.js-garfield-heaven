@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "three": "^0.144.0"
+  },
+  "devDependencies": {
+    "@parcel/config-default": "^2.7.0",
+    "parcel-reporter-static-files-copy": "^1.4.0"
+  },
+  "name": "three.js-basic-setup",
+  "description": "![Garbield](https://raw.githubusercontent.com/lukedev820/Three.js-basic-setup/master/Banner.png) ## Info 🐈 This is just a basic and silly experiment to learn [Three.js](https://threejs.org/). I mainly made this as a reference, test and a possible foundation for any silly projects I make with Three.js.",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build ./src/index.html",
+    "deploy": "rm -rf dist/ && npm run build && gp-pages -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukedev820/Three.js-basic-setup.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukedev820/Three.js-basic-setup/issues"
+  },
+  "staticFiles": {
+    "staticOutPath": "assets"
+  },
+  "homepage": "https://github.com/lukedev820/Three.js-basic-setup"
+}

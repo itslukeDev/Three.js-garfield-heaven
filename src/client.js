@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Garbield 🐈🐈🐈🐈🐈</title>
-</head>
-<body>
-<script src="js/three.js"></script>
-<script src="js/FlyControls.js"></script>
-<script src="js/GLTFLoader.js"></script>
+import * as THREE from 'three';
+import { FlyControls } from 'three/examples/jsm/controls/FlyControls.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-<audio id="song" preload="auto" style="display: none">
-    <source src="sounds/fly-me-to-the-moon.mp3" type="audio/mpeg">
-</audio>
-
-<div id="overlay">
-    <button id="startButton">Play</button>
-</div>
-<script>
 //Init variables
 var scene,camera,renderer,model;
 
@@ -47,7 +31,7 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
 //Fly Controls
-var controls = new THREE.FlyControls( camera, renderer.domElement );
+var controls = new FlyControls( camera, renderer.domElement );
 
     controls.movementSpeed = 30;
     controls.domElement = document.body;
@@ -55,30 +39,28 @@ var controls = new THREE.FlyControls( camera, renderer.domElement );
     controls.autoForward = false;
     controls.dragToLook = false;
 
-
-//Orbit Controls
-//var controls = new THREE.OrbitControls(camera, renderer.domElement);
-//controls.update();
-
 //Lighting
 var abint = new THREE.AmbientLight(0x555500, 4);
 scene.add(abint);
 
 
 //Gltf model
-var loader = new THREE.GLTFLoader();
+var loader = new GLTFLoader();
 for(var i = 0; i<400;i++) {
-    loader.load( 'Models/scene.gltf', function ( gltf ) {
+    loader.load( "./assets/scene.gltf", function(gltf) {
     
         model = gltf.scene;
         model.scale.set(10,10,10);
         model.position.x = (Math.random() - 0.5) * 300;
         model.position.y = (Math.random() - 0.5) * 100;
         model.position.z = (Math.random() - 0.5) * 200;
-	model.rotation.y = (Math.random() * 10);
+	    model.rotation.y = (Math.random() * 10);
         scene.add(model);
         models.push(model);
-    })  
+
+    }, undefined, function(error) {
+        console.error(error);
+    });
     
 }
 
@@ -103,9 +85,6 @@ songElement.volume = 0.4;
 songElement.play();
 
 
-animate();
-
-
 
 //Animation
 function animate() {
@@ -114,17 +93,11 @@ function animate() {
     for ( let i = 0; i < models.length; i ++ ) {
     const model = models[ i ];
     model.rotation.y += 0.01
-    //model.rotation.x += 0.01
-    //model.rotation.z += 0.01
     }
     const delta = clock.getDelta();
 
 	controls.update( delta );
     renderer.render(scene,camera);
 }
+animate();
 }
-
-</script>
-
-</body>
-</html>
