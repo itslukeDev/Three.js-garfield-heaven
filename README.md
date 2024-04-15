@@ -1,4 +1,4 @@
-# Three.js basic-setup 🐈
+# Three.js-garfield-heaven  🐈
 ![Garbield](https://raw.githubusercontent.com/lukedev820/Three.js-basic-setup/master/Banner.png)
 ## Info 🐈
 This is just a basic and silly experiment to learn [Three.js](https://threejs.org/) and other webdev tools (npm, parcel, ect). I mainly made this as a reference, test and a possible foundation for any silly projects I make with Three.js. 
